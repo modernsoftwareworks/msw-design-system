@@ -1,7 +1,7 @@
 import { Component, type ComponentType, type ReactNode } from 'react';
 import { useParams } from 'react-router';
 import * as MswUI from '@msw-ds/ui';
-import { GALLERY } from './manifest';
+import { GALLERY, OMITTED } from './manifest';
 import { EXAMPLES } from './examples';
 import './gallery.css';
 
@@ -78,6 +78,11 @@ export function GalleryPage() {
           );
         })}
       </div>
+      <p className="gallery-foot">
+        Beyond these demos, {OMITTED.length} further exports — sub-parts, providers, and hooks-only
+        utilities — are composed inside the examples above or intentionally undemoed; each is
+        catalogued with its reason in the gallery manifest.
+      </p>
     </article>
   );
 }
