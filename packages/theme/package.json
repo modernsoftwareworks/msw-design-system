@@ -1,0 +1,21 @@
+{
+  "name": "@msw-ds/theme",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/msw.d.ts",
+      "default": "./dist/msw.js"
+    },
+    "./css": "./dist/msw.css"
+  },
+  "scripts": {
+    "build": "astryx theme build src/themes/msw.ts -o dist/msw.css",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@astryxdesign/cli": "0.1.7",
+    "@astryxdesign/core": "0.1.7"
+  }
+}
