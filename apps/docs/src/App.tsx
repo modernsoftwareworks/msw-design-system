@@ -1,10 +1,12 @@
-import { useState } from 'react';
+import { Suspense, lazy, useState } from 'react';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router';
 import { MswProvider, type MswMode } from '@msw-ds/ui';
 import { DocShell } from './layout/DocShell';
 import { Home } from './pages/Home';
 import { Principles } from './pages/Principles';
-import { GalleryPage } from './gallery/GalleryPage';
+const GalleryPage = lazy(() =>
+  import('./gallery/GalleryPage').then((m) => ({ default: m.GalleryPage })),
+);
 import { Color } from './pages/foundations/Color';
 import { Typography } from './pages/foundations/Typography';
 import { Space } from './pages/foundations/Space';
@@ -29,7 +31,14 @@ export function App() {
             <Route path="/foundations/elevation" element={<Elevation />} />
             <Route path="/foundations/motion" element={<Motion />} />
             <Route path="/components" element={<Navigate to="/components/forms" replace />} />
-            <Route path="/components/:slug" element={<GalleryPage />} />
+            <Route
+              path="/components/:slug"
+              element={
+                <Suspense fallback={null}>
+                  <GalleryPage />
+                </Suspense>
+              }
+            />
           </Routes>
         </DocShell>
       </BrowserRouter>
