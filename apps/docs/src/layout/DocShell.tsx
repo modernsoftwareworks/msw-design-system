@@ -4,7 +4,13 @@ import type { MswMode } from '@msw-ds/ui';
 import './docshell.css';
 
 const NAV: Array<{ heading: string; links: Array<{ to: string; label: string }> }> = [
-  { heading: 'Overview', links: [{ to: '/', label: 'Home' }] },
+  {
+    heading: 'Overview',
+    links: [
+      { to: '/', label: 'Home' },
+      { to: '/principles', label: 'Principles' },
+    ],
+  },
   {
     heading: 'Foundations',
     links: [
@@ -14,6 +20,18 @@ const NAV: Array<{ heading: string; links: Array<{ to: string; label: string }> 
       { to: '/foundations/shape', label: 'Shape' },
       { to: '/foundations/elevation', label: 'Elevation' },
       { to: '/foundations/motion', label: 'Motion' },
+    ],
+  },
+  {
+    heading: 'Components',
+    links: [
+      { to: '/components/forms', label: 'Forms & Inputs' },
+      { to: '/components/data', label: 'Data Display' },
+      { to: '/components/overlays', label: 'Overlays & Feedback' },
+      { to: '/components/navigation', label: 'Navigation & Search' },
+      { to: '/components/layout', label: 'Layout & Structure' },
+      { to: '/components/content', label: 'Content & Typography' },
+      { to: '/components/media', label: 'Media & Communication' },
     ],
   },
 ];

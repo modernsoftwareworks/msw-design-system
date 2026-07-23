@@ -1,0 +1,61 @@
+.eyebrow {
+  font-size: 13px;
+  color: var(--color-accent);
+  letter-spacing: 0.4px;
+  margin: 0 0 20px;
+}
+
+.gallery-title {
+  margin: 0 0 8px;
+}
+
+.gallery-count {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  margin: 0 0 32px;
+}
+
+.gallery-empty {
+  color: var(--color-text-secondary);
+}
+
+.gallery-list {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.demo-block {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.demo-label {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.demo-card {
+  display: flex;
+  align-items: flex-start;
+  padding: 24px;
+  background: var(--color-background-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-container);
+}
+
+.demo-fallback {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .demo-card {
+    padding: 16px;
+  }
+}

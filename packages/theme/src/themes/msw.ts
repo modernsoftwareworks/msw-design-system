@@ -23,6 +23,9 @@ export const mswTheme = defineTheme({
   },
   radius: { base: 4, multiplier: 1 }, // Astryx defaults already equal Kami's 8px element / 12px container
   tokens: {
+    // Kami: no 600 on serif — component chrome (table headers, labels) that asks for
+    // semibold gets 500. True bold (700) is kept for genuine emphasis in user content.
+    '--font-weight-semibold': '500',
     // Accent — pinned: the HCT generator "corrects" ink-blue to a brighter blue otherwise
     '--color-accent': ['#1B365D', '#2D5A8A'],
     '--color-on-accent': ['#faf9f5', '#faf9f5'], // ivory on ink, never pure white
