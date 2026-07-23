@@ -49,6 +49,7 @@ import {
   DateInput,
   DateRangeInput,
   DateTimeInput,
+  Divider,
   DropdownMenu,
   EmptyState,
   Field,
@@ -85,6 +86,7 @@ import {
   ProgressBar,
   RadioList,
   RadioListItem,
+  ResizeHandle,
   Section,
   SegmentedControl,
   SegmentedControlItem,
@@ -94,6 +96,7 @@ import {
   SideNavItem,
   Skeleton,
   Slider,
+  Spinner,
   Stack,
   StatusDot,
   Switch,
@@ -448,6 +451,7 @@ export const EXAMPLES: Record<string, () => ReactElement> = {
   ),
   Skeleton: () => <Skeleton width={220} height={72} />,
   ProgressBar: () => <ProgressBar label="Sync in progress" value={62} hasValueLabel />,
+  Spinner: () => <Spinner label="Loading…" size="lg" />,
   Kbd: () => <Kbd keys="Cmd+K" />,
   Token: () => <Token label="design-system" onRemove={() => {}} />,
   EmptyState: () => (
@@ -617,6 +621,14 @@ export const EXAMPLES: Record<string, () => ReactElement> = {
   ),
 
   // ---- Layout & Structure ----
+  Divider: () => <Divider label="or continue with" />,
+  ResizeHandle: () => (
+    <div style={{ display: "flex", height: 96, width: "100%", maxWidth: 320 }}>
+      <div style={{ flex: 1, background: "var(--color-background-muted)", borderRadius: 8 }} />
+      <ResizeHandle direction="horizontal" hasDivider label="Resize demo panels" />
+      <div style={{ flex: 1, background: "var(--color-background-muted)", borderRadius: 8 }} />
+    </div>
+  ),
   Grid: () => (
     <Grid columns={3} gap={3}>
       <Card padding={3}>Alpha</Card>

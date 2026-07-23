@@ -1,6 +1,7 @@
 import { Component, type ComponentType, type ReactNode } from "react";
 import { useParams } from "react-router";
 import * as MswUI from "@modernsoftwareworks/msw-ui";
+import { PageHeader } from "../components/PageHeader";
 import { GALLERY, OMITTED } from "./manifest";
 import { EXAMPLES } from "./examples";
 import "./gallery.css";
@@ -8,11 +9,10 @@ import "./gallery.css";
 // Pragmatic cast: '@modernsoftwareworks/msw-ui' re-exports ~170 components with heterogeneous
 // prop shapes, but this map is only ever used for the *bare* fallback render
 // (zero props) — anything that needs real props has its own entry in
-// EXAMPLES instead. Erasing the real per-component prop types to a single
-// "no props" shape is accurate for how this map is actually used below.
+// EXAMPLES instead.
 const COMPONENTS = MswUI as unknown as Record<string, ComponentType<Record<string, never>>>;
 
-const FALLBACK_TEXT = (name: string) => `${name}: render failed — needs an example`;
+const FALLBACK_TEXT = (name: string) => `${name}: needs a dedicated example to demo safely.`;
 
 type ErrorBoundaryProps = { name: string; children: ReactNode };
 type ErrorBoundaryState = { hasError: boolean };
@@ -44,25 +44,31 @@ export function GalleryPage() {
   if (!section) {
     return (
       <article>
-        <p className="eyebrow">Components</p>
-        <h2 className="gallery-title">Section not found</h2>
-        <p className="gallery-empty">There is no gallery section for &ldquo;{slug}&rdquo;.</p>
+        <PageHeader
+          eyebrow="Components"
+          title="Section not found"
+          lede={`There is no gallery section for “${slug ?? ""}”. Pick a section from the sidebar.`}
+        />
       </article>
     );
   }
 
   return (
     <article>
-      <p className="eyebrow">Components · {section.title}</p>
-      <h2 className="gallery-title">{section.title}</h2>
-      <p className="gallery-count">{section.components.length} components</p>
+      <PageHeader
+        eyebrow={`Components · ${section.title}`}
+        title={section.title}
+        lede={`${section.components.length} components`}
+      />
       <div className="gallery-list">
         {section.components.map((name) => {
           const Example = EXAMPLES[name];
           const Bare = COMPONENTS[name];
           return (
-            <section className="demo-block" key={name}>
-              <p className="demo-label">{name}</p>
+            <section className="demo-block" key={name} aria-labelledby={`demo-${name}`}>
+              <h2 className="demo-label" id={`demo-${name}`}>
+                {name}
+              </h2>
               <div className="demo-card">
                 <DemoErrorBoundary name={name}>
                   {Example ? (
