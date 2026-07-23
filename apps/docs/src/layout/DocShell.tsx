@@ -5,6 +5,17 @@ import './docshell.css';
 
 const NAV: Array<{ heading: string; links: Array<{ to: string; label: string }> }> = [
   { heading: 'Overview', links: [{ to: '/', label: 'Home' }] },
+  {
+    heading: 'Foundations',
+    links: [
+      { to: '/foundations/color', label: 'Color' },
+      { to: '/foundations/typography', label: 'Typography' },
+      { to: '/foundations/space', label: 'Space' },
+      { to: '/foundations/shape', label: 'Shape' },
+      { to: '/foundations/elevation', label: 'Elevation' },
+      { to: '/foundations/motion', label: 'Motion' },
+    ],
+  },
 ];
 
 const MODE_ORDER: MswMode[] = ['system', 'light', 'dark'];
