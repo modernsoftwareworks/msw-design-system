@@ -75,8 +75,9 @@
   font-size: 11px;
   letter-spacing: 0.4px;
   text-transform: uppercase;
+  /* No opacity dimming: secondary is already the muted tier, and 11px text
+     needs the full 4.5:1 (dimmed it measured 4.25:1 on parchment) */
   color: var(--color-text-secondary);
-  opacity: 0.7;
 }
 
 .token-preview-text {

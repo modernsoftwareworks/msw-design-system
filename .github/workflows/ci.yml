@@ -11,9 +11,9 @@ jobs:
       - run: vp check
       - run: vp test run
       - run: pnpm run test:bundle
-      - run: pnpm run test:react-scan
       - name: Install Playwright browsers
         run: pnpm exec playwright install --with-deps chromium
+      - run: pnpm run test:react-scan
       - run: pnpm run test:a11y
       - run: pnpm run test:lighthouse
       - run: pnpm run test:react-doctor

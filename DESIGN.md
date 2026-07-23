@@ -8,18 +8,25 @@ Warm parchment canvas, single ink-blue accent, serif hierarchy at weight 500, wh
 
 ## Colors
 
-| Role                      | Light               | Dark                      | Token                                  |
-| ------------------------- | ------------------- | ------------------------- | -------------------------------------- |
-| Body                      | `#f5f4ed` parchment | `#141413` deep-dark       | `--color-background-body`              |
-| Surface / card            | `#faf9f5` ivory     | `#30302e`                 | `--color-background-surface` / `-card` |
-| Muted                     | `#e8e6dc` warm-sand | `#3a3934`                 | `--color-background-muted`             |
-| Text primary              | `#141413`           | `#faf9f5`                 | `--color-text-primary`                 |
-| Text secondary            | `#3d3d3a`           | `#b0aea5`                 | `--color-text-secondary`               |
-| Text disabled             | `#6b6a64`           | ≥ AA on body (see tokens) | `--color-text-disabled`                |
-| Accent                    | `#1B365D` ink-blue  | `#2D5A8A`                 | `--color-accent`                       |
-| On accent                 | `#faf9f5`           | `#faf9f5`                 | `--color-on-accent`                    |
-| Border soft               | `#e5e3d8`           | `#3d3c38`                 | `--color-border`                       |
-| Success / warning / error | warm muted trio     | warmer lift               | feedback only                          |
+| Role                      | Light               | Dark                                  | Token                                         |
+| ------------------------- | ------------------- | ------------------------------------- | --------------------------------------------- |
+| Body                      | `#f5f4ed` parchment | `#141413` deep-dark                   | `--color-background-body`                     |
+| Surface / card            | `#faf9f5` ivory     | `#30302e`                             | `--color-background-surface` / `-card`        |
+| Muted                     | `#e8e6dc` warm-sand | `#3a3934`                             | `--color-background-muted`                    |
+| Text primary              | `#141413`           | `#faf9f5`                             | `--color-text-primary`                        |
+| Text secondary            | `#3d3d3a`           | `#c0beb5` (AA on controls)            | `--color-text-secondary`                      |
+| Text disabled             | `#6b6a64`           | ≥ AA on body (see tokens)             | `--color-text-disabled`                       |
+| Accent (fills, rails)     | `#1B365D` ink-blue  | `#2D5A8A`                             | `--color-accent`                              |
+| Accent as text/icon       | `#1B365D`           | `#84aad6` (Kami dark-syntax blue, AA) | `--color-text-accent` / `--color-icon-accent` |
+| On accent                 | `#faf9f5`           | `#faf9f5`                             | `--color-on-accent`                           |
+| Border soft               | `#e5e3d8`           | `#3d3c38`                             | `--color-border`                              |
+| Success / warning / error | warm muted trio     | warmer lift                           | feedback only                                 |
+
+Status companions are pinned warm too: `--color-*-muted` are translucencies of the MSW trio
+(never Astryx's stock green/crimson), `--color-on-success/-error` are ivory, `--color-on-warning`
+is warm near-black `#141413`, and `--color-shadow` is warm-neutral (never Astryx's navy tint).
+Accent as _text_ uses `--color-text-accent` — plain `--color-accent` is reserved for fills,
+rails, and outlines where 4.5:1 doesn't apply.
 
 **Rules**
 
@@ -33,7 +40,7 @@ Warm parchment canvas, single ink-blue accent, serif hierarchy at weight 500, wh
 - **Web loading:** docs register local Charter via `@font-face { src: local(...) }` (`apps/docs/src/styles/fonts.css`). No remote webfont — systems without Charter fall back to Georgia (intentional cross-platform stand-in; not a second brand face)
 - **Code:** JetBrains Mono, SF Mono, Consolas, Monaco
 - **Heading weight:** 500 only (`--font-weight-semibold` remapped to 500)
-- **Scale:** Astryx scale base 14 / ratio 1.2 (body 14px, H3 ~17px). Home display title: clamp ~32–44px
+- **Scale:** Astryx scale base 14 / ratio 1.2 for body and small steps; heading sizes are pinned to Kami exactly — H1 30/1.2, H2 22/1.25, H3 17/1.3 (`--text-heading-{1,2,3}-size/-leading`). Home display title: clamp ~32–44px
 - **Line-height:** tight headlines 1.1–1.3, dense body ~1.43, reading ledes 1.5–1.55
 - **Tracking:** short labels and overlines only; English body 0
 - No italic for product chrome (Kami print rule; screen exceptions only if ever poetic)

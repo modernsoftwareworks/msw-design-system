@@ -4,15 +4,16 @@
 
 .page-eyebrow {
   font-size: 13px;
-  color: var(--color-accent);
+  color: var(--color-text-accent);
   letter-spacing: 0.4px;
   margin: 0 0 16px;
 }
 
 .page-title {
-  font-size: var(--font-size-2xl, 1.5rem);
+  /* Kami H1: 30px/1.2 — consume the theme's heading token, not a raw scale step */
+  font-size: var(--text-heading-1-size, 1.5rem);
   font-weight: var(--font-weight-medium);
-  line-height: 1.25;
+  line-height: var(--text-heading-1-leading, 1.25);
   letter-spacing: -0.02em;
   margin: 0 0 12px;
   text-wrap: balance;

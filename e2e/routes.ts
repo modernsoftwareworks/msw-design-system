@@ -1,0 +1,17 @@
+export const ROUTES = [
+  "/",
+  "/principles",
+  "/foundations/color",
+  "/foundations/typography",
+  "/foundations/space",
+  "/foundations/shape",
+  "/foundations/elevation",
+  "/foundations/motion",
+  "/components/forms",
+  "/components/data",
+  "/components/overlays",
+  "/components/navigation",
+  "/components/layout",
+  "/components/content",
+  "/components/media",
+];

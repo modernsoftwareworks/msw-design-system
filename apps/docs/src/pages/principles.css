@@ -23,7 +23,7 @@
 .pr-num {
   font-family: var(--font-family-code);
   font-size: 12px;
-  color: var(--color-accent);
+  color: var(--color-text-accent);
   line-height: 1.8;
   flex-shrink: 0;
 }

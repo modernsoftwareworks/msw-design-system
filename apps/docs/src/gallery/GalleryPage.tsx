@@ -65,7 +65,12 @@ export function GalleryPage() {
           const Example = EXAMPLES[name];
           const Bare = COMPONENTS[name];
           return (
-            <section className="demo-block" key={name} aria-labelledby={`demo-${name}`}>
+            <section
+              className="demo-block"
+              key={name}
+              data-demo={name}
+              aria-labelledby={`demo-${name}`}
+            >
               <h2 className="demo-label" id={`demo-${name}`}>
                 {name}
               </h2>

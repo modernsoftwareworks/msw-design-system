@@ -806,12 +806,15 @@ export const EXAMPLES: Record<string, () => ReactElement> = {
     </ChatMessageList>
   ),
   ChatComposer: () => (
-    <ChatComposer
-      value=""
-      onChange={() => {}}
-      onSubmit={() => {}}
-      placeholder="Message the team..."
-    />
+    // Width container: the composer's input collapses to ~40px without a sized parent
+    <div style={{ width: "min(420px, 100%)" }}>
+      <ChatComposer
+        value=""
+        onChange={() => {}}
+        onSubmit={() => {}}
+        placeholder="Message the team..."
+      />
+    </div>
   ),
   ChatSystemMessage: () => (
     <ChatSystemMessage>Ada Lovelace joined the conversation.</ChatSystemMessage>
