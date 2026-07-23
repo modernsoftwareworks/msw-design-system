@@ -1,0 +1,147 @@
+/* Shared styles for the /foundations pages — page header pattern + swatch grid.
+   Every value comes from @msw-ds/theme tokens; no hardcoded colors. */
+
+.eyebrow {
+  font-size: 13px;
+  color: var(--color-accent);
+  letter-spacing: 0.4px;
+  margin: 0 0 12px;
+}
+
+.page-title {
+  margin: 0 0 12px;
+}
+
+.lede {
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--color-text-secondary);
+  max-width: 60ch;
+  margin: 0 0 40px;
+}
+
+.section {
+  margin: 0 0 40px;
+}
+
+.section-label {
+  font-size: 11px;
+  font-weight: var(--font-weight-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  color: var(--color-text-secondary);
+  margin: 0 0 12px;
+}
+
+.section-note {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--color-text-secondary);
+  margin: 12px 0 0;
+  max-width: 60ch;
+}
+
+.swatch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 12px;
+}
+
+/* Typography page — live type ramp rows */
+.type-row {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  padding: 14px 0;
+  border-top: 1px solid var(--color-border);
+}
+.type-row:first-child {
+  border-top: none;
+}
+.type-sample {
+  margin: 0;
+  flex: 1;
+}
+.type-label {
+  font-family: var(--font-family-code);
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+}
+
+/* Space page — 4px grid bars */
+.space-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.space-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.space-name {
+  font-family: var(--font-family-code);
+  font-size: 12px;
+  color: var(--color-text-primary);
+  width: 96px;
+  flex-shrink: 0;
+}
+.space-bar {
+  height: 12px;
+  background: var(--color-background-muted);
+  border-radius: var(--radius-inner);
+}
+.space-px {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+}
+
+/* Key/value rows — reused by Motion for duration & easing tokens */
+.kv-rows {
+  display: flex;
+  flex-direction: column;
+}
+.kv-row {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  padding: 10px 0;
+  border-top: 1px solid var(--color-border);
+}
+.kv-row:first-child {
+  border-top: none;
+}
+.kv-name {
+  font-family: var(--font-family-code);
+  font-size: 12px;
+  color: var(--color-text-primary);
+  width: 160px;
+  flex-shrink: 0;
+}
+.kv-value {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+}
+
+/* Motion page — live hover demo */
+.motion-demo-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+.motion-demo {
+  width: 96px;
+  height: 96px;
+  background: var(--color-background-muted);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-element);
+  transition:
+    transform var(--duration-medium) var(--ease-standard),
+    background-color var(--duration-medium) var(--ease-standard);
+}
+.motion-demo:hover {
+  transform: translateY(-4px);
+  background-color: var(--color-accent);
+}
