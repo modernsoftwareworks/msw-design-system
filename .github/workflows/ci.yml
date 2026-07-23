@@ -6,6 +6,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: voidzero-dev/setup-vp@v1
+      # setup-vp provides `vp` but no global pnpm; the quality-gate scripts and
+      # Playwright's webServer commands invoke pnpm directly.
+      - uses: pnpm/action-setup@v4
       - run: vp install --frozen-lockfile
       - run: vp run build
       - run: vp check
