@@ -1,0 +1,5 @@
+{
+  "docsMainJsBytes": 360000,
+  "docsGalleryJsBytes": 1200000,
+  "notes": "Main entry is provider + shell + foundations (~300KB after split from ~1MB full catalog). Gallery chunk holds the Astryx catalog."
+}

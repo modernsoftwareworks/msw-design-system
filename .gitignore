@@ -3,3 +3,9 @@ dist/
 .vite/
 *.log
 .DS_Store
+
+# Quality gate artifacts
+.lighthouseci/
+.ci/reports/
+test-results/
+playwright-report/
