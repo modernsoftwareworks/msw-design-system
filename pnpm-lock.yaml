@@ -47,7 +47,7 @@ importers:
 
   apps/docs:
     dependencies:
-      '@msw-ds/ui':
+      '@modernsoftwareworks/msw-ui':
         specifier: workspace:*
         version: link:../../packages/ui
       react:
@@ -87,7 +87,7 @@ importers:
       '@astryxdesign/core':
         specifier: 0.1.7
         version: 0.1.7(@stylexjs/stylex@0.19.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
-      '@msw-ds/theme':
+      '@modernsoftwareworks/msw-theme':
         specifier: workspace:*
         version: link:../theme
       '@stylexjs/stylex':

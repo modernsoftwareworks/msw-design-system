@@ -1,11 +1,11 @@
 import { Component, type ComponentType, type ReactNode } from 'react';
 import { useParams } from 'react-router';
-import * as MswUI from '@msw-ds/ui';
+import * as MswUI from '@modernsoftwareworks/msw-ui';
 import { GALLERY, OMITTED } from './manifest';
 import { EXAMPLES } from './examples';
 import './gallery.css';
 
-// Pragmatic cast: '@msw-ds/ui' re-exports ~170 components with heterogeneous
+// Pragmatic cast: '@modernsoftwareworks/msw-ui' re-exports ~170 components with heterogeneous
 // prop shapes, but this map is only ever used for the *bare* fallback render
 // (zero props) — anything that needs real props has its own entry in
 // EXAMPLES instead. Erasing the real per-component prop types to a single
