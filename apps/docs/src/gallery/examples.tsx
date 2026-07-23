@@ -120,7 +120,7 @@ import {
   VStack,
   createStaticSource,
   useToast,
-} from '@msw-ds/ui';
+} from '@modernsoftwareworks/msw-ui';
 
 // A tiny inline abstract graphic — no network fetch, keeps Thumbnail/Lightbox
 // demos self-contained. Warm, muted tones consistent with the Kami palette.
@@ -666,16 +666,16 @@ export const EXAMPLES: Record<string, () => ReactElement> = {
       The Analytical Engine weaves algebraic patterns, just as the Jacquard loom weaves flowers and leaves.
     </Blockquote>
   ),
-  Code: () => <Code>npm install @msw-ds/ui</Code>,
+  Code: () => <Code>npm install @modernsoftwareworks/msw-ui</Code>,
   CodeBlock: () => (
     <CodeBlock
       language="tsx"
-      code={'import { Button } from \'@msw-ds/ui\';\n\nexport function Example() {\n  return <Button label="Continue" variant="primary" />;\n}'}
+      code={'import { Button } from \'@modernsoftwareworks/msw-ui\';\n\nexport function Example() {\n  return <Button label="Continue" variant="primary" />;\n}'}
     />
   ),
   Markdown: () => (
     <Markdown>
-      {'## Getting started\n\nInstall the package:\n\n```bash\nnpm install @msw-ds/ui\n```\n\nThen wrap your app in the provider.'}
+      {'## Getting started\n\nInstall the package:\n\n```bash\nnpm install @modernsoftwareworks/msw-ui\n```\n\nThen wrap your app in the provider.'}
     </Markdown>
   ),
   Citation: () => <Citation source={{ title: 'Astryx design system', url: '#' }} number={1} />,

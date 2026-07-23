@@ -1,8 +1,22 @@
 {
-  "name": "@msw-ds/theme",
+  "name": "@modernsoftwareworks/msw-theme",
   "version": "0.1.0",
-  "private": true,
+  "description": "MSW design system theme — the Kami visual language (warm parchment, ink-blue accent, serif hierarchy) as an Astryx theme",
+  "license": "MIT",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/modernsoftwareworks/msw-design-system.git",
+    "directory": "packages/theme"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "public"
+  },
+  "files": [
+    "dist",
+    "css.d.ts"
+  ],
   "exports": {
     ".": {
       "types": "./dist/msw.d.ts",

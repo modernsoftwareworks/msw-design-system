@@ -1,6 +1,6 @@
 import { Suspense, lazy, useState } from 'react';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router';
-import { MswProvider, type MswMode } from '@msw-ds/ui';
+import { MswProvider, type MswMode } from '@modernsoftwareworks/msw-ui';
 import { DocShell } from './layout/DocShell';
 import { Home } from './pages/Home';
 import { Principles } from './pages/Principles';

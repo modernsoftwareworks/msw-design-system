@@ -1,7 +1,7 @@
 /**
  * Component gallery manifest — M6.
  *
- * Reconciled against `pnpm --filter @msw-ds/theme exec astryx component --json`
+ * Reconciled against `pnpm --filter @modernsoftwareworks/msw-theme exec astryx component --json`
  * (150 cataloged components) union the actual named exports of
  * `@astryxdesign/core` (423 exports; 167 look like components by name).
  * Hooks (`use*`) and providers/contexts are excluded per the milestone brief.

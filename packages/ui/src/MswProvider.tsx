@@ -1,9 +1,9 @@
 import type { PropsWithChildren } from 'react';
 import { Theme } from '@astryxdesign/core';
-import { mswTheme } from '@msw-ds/theme';
+import { mswTheme } from '@modernsoftwareworks/msw-theme';
 import '@astryxdesign/core/reset.css';
 import '@astryxdesign/core/astryx.css';
-import '@msw-ds/theme/css';
+import '@modernsoftwareworks/msw-theme/css';
 
 export type MswMode = 'system' | 'light' | 'dark';
 

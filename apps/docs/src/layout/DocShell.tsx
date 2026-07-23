@@ -1,6 +1,6 @@
 import type { PropsWithChildren } from 'react';
 import { NavLink } from 'react-router';
-import type { MswMode } from '@msw-ds/ui';
+import type { MswMode } from '@modernsoftwareworks/msw-ui';
 import './docshell.css';
 
 const NAV: Array<{ heading: string; links: Array<{ to: string; label: string }> }> = [
