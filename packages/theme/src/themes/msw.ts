@@ -38,10 +38,11 @@ export const mswTheme = defineTheme({
     "--color-background-muted": ["#e8e6dc", "#3a3934"], // warm-sand
     "--color-text-primary": ["#141413", "#faf9f5"],
     "--color-text-secondary": ["#3d3d3a", "#b0aea5"],
-    "--color-text-disabled": ["#6b6a64", "#79756a"], // Kami's stone tier folds into Astryx's 3-slot text system
+    // Dark disabled: warm stone that clears AA on body (#141413) and surface/card (#30302e)
+    "--color-text-disabled": ["#6b6a64", "#99978f"],
     "--color-icon-primary": ["#141413", "#faf9f5"],
     "--color-icon-secondary": ["#504e49", "#b0aea5"], // olive
-    "--color-icon-disabled": ["#6b6a64", "#79756a"],
+    "--color-icon-disabled": ["#6b6a64", "#99978f"],
     // Astryx --color-border is the LOW-contrast default → Kami border-soft; -emphasized is the stronger one
     "--color-border": ["#e5e3d8", "#3d3c38"],
     "--color-border-emphasized": ["#e8e6dc", "#4a4944"],
