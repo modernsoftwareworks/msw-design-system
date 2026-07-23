@@ -14,7 +14,8 @@
   ],
   "type": "module",
   "exports": {
-    ".": "./src/index.ts"
+    ".": "./src/index.ts",
+    "./provider": "./src/MswProvider.tsx"
   },
   "publishConfig": {
     "access": "public",
