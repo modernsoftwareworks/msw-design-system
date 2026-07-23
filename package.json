@@ -1,27 +1,27 @@
 {
-	"name": "msw-design-system",
-	"private": true,
-	"scripts": {
-		"build": "pnpm -r run build",
-		"typecheck": "pnpm -r run typecheck",
-		"dev": "pnpm --filter @modernsoftwareworks/docs run dev",
-		"lint": "vp lint .",
-		"test": "vp test run",
-		"format": "vp fmt",
-		"release": "pnpm build && pnpm changeset publish",
-		"prepare": "vp config"
-	},
-	"devDependencies": {
-		"@changesets/cli": "^2.31.1",
-		"@testing-library/jest-dom": "^7.0.0",
-		"@testing-library/react": "^16.3.2",
-		"jsdom": "^29.1.1",
-		"typescript": "~6.0.3",
-		"vite": "catalog:",
-		"vite-plus": "catalog:"
-	},
-	"engines": {
-		"node": ">=22"
-	},
-	"packageManager": "pnpm@11.7.0"
+  "name": "msw-design-system",
+  "private": true,
+  "scripts": {
+    "build": "pnpm -r run build",
+    "typecheck": "pnpm -r run typecheck",
+    "dev": "pnpm --filter @modernsoftwareworks/docs run dev",
+    "lint": "vp lint .",
+    "test": "vp test run",
+    "format": "vp fmt",
+    "release": "pnpm build && pnpm changeset publish",
+    "prepare": "vp config"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.31.1",
+    "@testing-library/jest-dom": "^7.0.0",
+    "@testing-library/react": "^16.3.2",
+    "jsdom": "^29.1.1",
+    "typescript": "~6.0.3",
+    "vite": "catalog:",
+    "vite-plus": "catalog:"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "packageManager": "pnpm@11.7.0"
 }

@@ -34,11 +34,11 @@ pnpm add @modernsoftwareworks/msw-ui react@^19 react-dom@^19
 import { MswProvider, Button } from "@modernsoftwareworks/msw-ui";
 
 export function App() {
-	return (
-		<MswProvider>
-			<Button label="Hello MSW" />
-		</MswProvider>
-	);
+  return (
+    <MswProvider>
+      <Button label="Hello MSW" />
+    </MswProvider>
+  );
 }
 ```
 

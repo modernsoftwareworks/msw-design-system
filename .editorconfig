@@ -1,0 +1,12 @@
+# Pins formatting inputs so Oxfmt (which honors EditorConfig) behaves
+# identically on every machine — user-level ~/.editorconfig files otherwise
+# leak into the repo because EditorConfig resolution walks up parent dirs.
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 2

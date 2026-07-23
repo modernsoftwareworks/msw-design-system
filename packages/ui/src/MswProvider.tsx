@@ -8,9 +8,9 @@ import "@modernsoftwareworks/msw-theme/css";
 export type MswMode = "system" | "light" | "dark";
 
 export function MswProvider({ children, mode = "system" }: PropsWithChildren<{ mode?: MswMode }>) {
-	return (
-		<Theme theme={mswTheme} mode={mode}>
-			{children}
-		</Theme>
-	);
+  return (
+    <Theme theme={mswTheme} mode={mode}>
+      {children}
+    </Theme>
+  );
 }
