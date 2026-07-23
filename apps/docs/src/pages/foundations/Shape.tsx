@@ -1,17 +1,20 @@
+import { PageHeader } from "../../components/PageHeader";
 import { TokenSwatch } from "../../components/TokenSwatch";
 import "./foundations.css";
 
 export function Shape() {
   return (
     <article>
-      <p className="eyebrow">04 · Shape</p>
-      <h2 className="page-title">Shape</h2>
-      <p className="lede">
-        Astryx defaults already match Kami — buttons/cards 8px, containers 12px.
-      </p>
+      <PageHeader
+        eyebrow="04 · Shape"
+        title="Shape"
+        lede="Astryx defaults already match Kami — buttons/cards 8px, containers 12px."
+      />
 
-      <section className="section">
-        <p className="section-label">Radius</p>
+      <section className="section" aria-labelledby="radius-label">
+        <h2 className="section-label" id="radius-label">
+          Radius
+        </h2>
         <div className="swatch-grid">
           <TokenSwatch token="--radius-inner" note="4px" />
           <TokenSwatch token="--radius-element" note="8px" />

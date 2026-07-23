@@ -1,3 +1,4 @@
+import { PageHeader } from "../../components/PageHeader";
 import "./foundations.css";
 
 const SCALE: Array<{ step: number; px: number }> = [
@@ -13,20 +14,25 @@ const SCALE: Array<{ step: number; px: number }> = [
 export function Space() {
   return (
     <article>
-      <p className="eyebrow">03 · Space</p>
-      <h2 className="page-title">Space</h2>
-      <p className="lede">
-        Everything sits on a 4px grid. Padding, gaps, and margins are always a multiple of
-        --spacing-1 — never an arbitrary pixel value.
-      </p>
+      <PageHeader
+        eyebrow="03 · Space"
+        title="Space"
+        lede="Everything sits on a 4px grid. Padding, gaps, and margins are always a multiple of --spacing-1 — never an arbitrary pixel value."
+      />
 
-      <section className="section">
-        <p className="section-label">Scale</p>
+      <section className="section" aria-labelledby="space-scale-label">
+        <h2 className="section-label" id="space-scale-label">
+          Scale
+        </h2>
         <div className="space-rows">
           {SCALE.map(({ step, px }) => (
             <div className="space-row" key={step}>
               <code className="space-name">--spacing-{step}</code>
-              <div className="space-bar" style={{ width: `var(--spacing-${step})` }} />
+              <div
+                className="space-bar"
+                style={{ width: `var(--spacing-${step})` }}
+                aria-hidden="true"
+              />
               <span className="space-px">{px}px</span>
             </div>
           ))}

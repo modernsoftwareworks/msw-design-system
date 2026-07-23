@@ -1,48 +1,98 @@
-.eyebrow {
-  font-size: 13px;
-  color: var(--color-accent);
-  letter-spacing: 0.4px;
-  margin: 0 0 20px;
-}
-
-.hero-title {
-  font-size: 44px;
-  line-height: 1.1;
-  letter-spacing: -0.4px;
-  margin: 0 0 20px;
-}
-
-.hero-accent {
-  color: var(--color-accent);
-}
-
-.hero-tagline {
-  font-size: 17px;
-  line-height: 1.55;
-  color: var(--color-text-secondary);
-  max-width: 52ch;
-  margin: 0 0 28px;
-}
-
-.hero-tokens {
+.home-qualities {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  padding-top: 20px;
-  border-top: 1px solid var(--color-border);
+  list-style: none;
+  margin: 0 0 36px;
+  padding: 0;
 }
 
-.hero-token {
-  font-size: 12px;
-  letter-spacing: 0.3px;
+.home-qualities li {
+  font-size: 13px;
+  letter-spacing: 0.2px;
   color: var(--color-text-secondary);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-inner);
-  padding: 3px 10px;
+  padding: 6px 12px;
 }
 
-@media (max-width: 768px) {
-  .hero-title {
-    font-size: 32px;
+.home-paths {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 0 0 40px;
+  border-top: 1px solid var(--color-border);
+}
+
+.home-path {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--color-border);
+  text-decoration: none;
+  color: inherit;
+  transition: color var(--duration-fast) var(--ease-standard);
+}
+
+/* Lock link colors — no browser :visited purple/blue drift */
+.home-path:link,
+.home-path:visited {
+  color: inherit;
+}
+.home-path:hover .home-path-title,
+.home-path:focus-visible .home-path-title {
+  color: var(--color-accent);
+}
+.home-path:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+}
+
+.home-path-title {
+  font-size: 16px;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+}
+
+.home-path-body {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--color-text-secondary);
+  max-width: 52ch;
+}
+
+.home-install-wrap {
+  margin: 0;
+}
+
+.home-install-hint {
+  margin: 0 0 8px;
+  font-size: 11px;
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+}
+
+.home-install {
+  margin: 0;
+  padding: 14px 16px;
+  background: var(--color-background-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-element);
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+.home-install code {
+  font-family: var(--font-family-code);
+  font-size: 13px;
+  color: var(--color-text-primary);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-path {
+    transition: none;
   }
 }

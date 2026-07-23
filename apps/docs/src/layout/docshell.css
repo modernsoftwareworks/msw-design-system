@@ -1,5 +1,5 @@
 /* Kami doc shell — parchment canvas, serif hierarchy, 2px brand rail.
-   Every value comes from @msw-ds/theme tokens; no hardcoded colors. */
+   Values come from msw-theme tokens. */
 
 body {
   margin: 0;
@@ -19,7 +19,7 @@ body {
   left: -9999px;
   top: 12px;
   z-index: 10;
-  padding: 6px 12px;
+  padding: 10px 14px;
   background: var(--color-background-surface);
   color: var(--color-accent);
   border: 1px solid var(--color-border-emphasized);
@@ -85,8 +85,11 @@ body {
 }
 
 .nav-link {
-  display: block;
-  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  box-sizing: border-box;
+  padding: 10px 10px;
   font-size: 14px;
   line-height: 1.45;
   color: var(--color-text-secondary);
@@ -94,10 +97,15 @@ body {
   border-left: 2px solid transparent;
   transition: color var(--duration-fast) var(--ease-standard);
 }
+.nav-link:link,
+.nav-link:visited {
+  color: var(--color-text-secondary);
+}
 .nav-link:hover {
   color: var(--color-text-primary);
 }
-.nav-link.active {
+.nav-link.active,
+.nav-link.active:visited {
   border-left-color: var(--color-accent);
   color: var(--color-accent);
 }
@@ -110,13 +118,14 @@ body {
 
 .mode-toggle {
   font-family: var(--font-family-body);
-  font-size: 12px;
+  font-size: 13px;
   letter-spacing: 0.3px;
   color: var(--color-text-secondary);
   background: transparent;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-element);
-  padding: 6px 14px;
+  min-height: 44px;
+  padding: 10px 16px;
   cursor: pointer;
   transition:
     border-color var(--duration-fast) var(--ease-standard),
@@ -133,9 +142,19 @@ body {
   padding: 64px 72px 120px;
   box-sizing: border-box;
 }
+.main:focus {
+  outline: none;
+}
 
 .prose {
   max-width: 720px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-link,
+  .mode-toggle {
+    transition: none;
+  }
 }
 
 @media (max-width: 768px) {
@@ -148,9 +167,72 @@ body {
     width: auto;
     border-right: none;
     border-bottom: 1px solid var(--color-border);
-    gap: 20px;
+    gap: 12px;
+    padding: 16px 16px 12px;
+  }
+  .wordmark {
+    padding-left: 0;
+  }
+  /* One chrome row: scrollable nav + mode control, not an orphan button */
+  .sidebar-chrome {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+  }
+  .sidenav {
+    flex: 1;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 4px;
+    scrollbar-width: none;
+    padding-bottom: 0;
+    min-width: 0;
+  }
+  .sidenav::-webkit-scrollbar {
+    display: none;
+  }
+  .nav-group {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 2px;
+    flex-shrink: 0;
+  }
+  .nav-heading {
+    display: none;
+  }
+  .nav-link {
+    min-height: 40px;
+    border-left: none;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+    padding: 8px 10px;
+  }
+  .nav-link.active,
+  .nav-link.active:visited {
+    border-left-color: transparent;
+    border-bottom-color: var(--color-accent);
+  }
+  .sidebar-foot {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+  }
+  .mode-toggle {
+    min-height: 40px;
+    padding: 8px 12px;
+    font-size: 12px;
   }
   .main {
     padding: 40px 20px 64px;
+  }
+}
+
+/* Desktop: foot stays at bottom of sticky sidebar */
+@media (min-width: 769px) {
+  .sidebar-chrome {
+    display: contents;
   }
 }

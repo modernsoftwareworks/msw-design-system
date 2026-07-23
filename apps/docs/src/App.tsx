@@ -1,18 +1,23 @@
 import { Suspense, lazy, useState } from "react";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router";
-import { MswProvider, type MswMode } from "@modernsoftwareworks/msw-ui";
+import { MswProvider, type MswMode } from "@modernsoftwareworks/msw-ui/provider";
 import { DocShell } from "./layout/DocShell";
 import { Home } from "./pages/Home";
 import { Principles } from "./pages/Principles";
-const GalleryPage = lazy(() =>
-  import("./gallery/GalleryPage").then((m) => ({ default: m.GalleryPage })),
-);
 import { Color } from "./pages/foundations/Color";
 import { Typography } from "./pages/foundations/Typography";
 import { Space } from "./pages/foundations/Space";
 import { Shape } from "./pages/foundations/Shape";
 import { Elevation } from "./pages/foundations/Elevation";
 import { Motion } from "./pages/foundations/Motion";
+
+const GalleryPage = lazy(() =>
+  import("./gallery/GalleryPage").then((m) => ({ default: m.GalleryPage })),
+);
+
+function GalleryFallback() {
+  return <output className="gallery-loading">Loading components…</output>;
+}
 
 export function App() {
   const [mode, setMode] = useState<MswMode>("system");
@@ -34,7 +39,7 @@ export function App() {
             <Route
               path="/components/:slug"
               element={
-                <Suspense fallback={null}>
+                <Suspense fallback={<GalleryFallback />}>
                   <GalleryPage />
                 </Suspense>
               }

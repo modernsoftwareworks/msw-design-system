@@ -1,18 +1,20 @@
+import { PageHeader } from "../../components/PageHeader";
 import { TokenSwatch } from "../../components/TokenSwatch";
 import "./foundations.css";
 
 export function Elevation() {
   return (
     <article>
-      <p className="eyebrow">05 · Elevation</p>
-      <h2 className="page-title">Elevation</h2>
-      <p className="lede">
-        Depth whispers: one shadow value — 0 4px 24px at 5% black — plus a ring for focus. Hard drop
-        shadows are forbidden.
-      </p>
+      <PageHeader
+        eyebrow="05 · Elevation"
+        title="Elevation"
+        lede="Depth whispers: one shadow value — 0 4px 24px at 5% black — plus a ring for focus. Hard drop shadows are forbidden."
+      />
 
-      <section className="section">
-        <p className="section-label">Shadow</p>
+      <section className="section" aria-labelledby="shadow-label">
+        <h2 className="section-label" id="shadow-label">
+          Shadow
+        </h2>
         <div className="swatch-grid">
           <TokenSwatch token="--shadow-low" note="Default resting depth" />
           <TokenSwatch token="--shadow-med" note="Raised — menus, dropdowns" />

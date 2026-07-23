@@ -1,6 +1,6 @@
 import type { PropsWithChildren } from "react";
 import { NavLink } from "react-router";
-import type { MswMode } from "@modernsoftwareworks/msw-ui";
+import type { MswMode } from "@modernsoftwareworks/msw-ui/provider";
 import "./docshell.css";
 
 const NAV: Array<{ heading: string; links: Array<{ to: string; label: string }> }> = [
@@ -55,34 +55,39 @@ export function DocShell({
           <span className="wordmark-name">MSW</span>
           <span className="wordmark-sub">Design System</span>
         </div>
-        <nav className="sidenav" aria-label="Documentation">
-          {NAV.map((group) => (
-            <div className="nav-group" key={group.heading}>
-              <div className="nav-heading">{group.heading}</div>
-              {group.links.map((link) => (
-                <NavLink
-                  key={link.to}
-                  to={link.to}
-                  className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")}
-                >
-                  {link.label}
-                </NavLink>
-              ))}
-            </div>
-          ))}
-        </nav>
-        <div className="sidebar-foot">
-          <button
-            type="button"
-            className="mode-toggle"
-            onClick={() => onModeChange(nextMode)}
-            aria-label={`Color mode: ${MODE_LABEL[mode]}. Switch to ${MODE_LABEL[nextMode]}.`}
-          >
-            {MODE_LABEL[mode]}
-          </button>
+        <div className="sidebar-chrome">
+          <nav className="sidenav" aria-label="Documentation">
+            {NAV.map((group) => (
+              <div className="nav-group" key={group.heading}>
+                <div className="nav-heading" id={`nav-${group.heading.toLowerCase()}`}>
+                  {group.heading}
+                </div>
+                {group.links.map((link) => (
+                  <NavLink
+                    key={link.to}
+                    to={link.to}
+                    end={link.to === "/"}
+                    className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")}
+                  >
+                    {link.label}
+                  </NavLink>
+                ))}
+              </div>
+            ))}
+          </nav>
+          <div className="sidebar-foot">
+            <button
+              type="button"
+              className="mode-toggle"
+              onClick={() => onModeChange(nextMode)}
+              aria-label={`Color mode: ${MODE_LABEL[mode]}. Switch to ${MODE_LABEL[nextMode]}.`}
+            >
+              {MODE_LABEL[mode]}
+            </button>
+          </div>
         </div>
       </aside>
-      <main className="main" id="main">
+      <main className="main" id="main" tabIndex={-1}>
         <div className="prose">{children}</div>
       </main>
     </div>

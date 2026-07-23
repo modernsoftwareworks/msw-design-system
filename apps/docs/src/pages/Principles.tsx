@@ -1,3 +1,4 @@
+import { PageHeader } from "../components/PageHeader";
 import "./principles.css";
 
 const INVARIANTS = [
@@ -38,18 +39,19 @@ const DEVIATIONS = [
 export function Principles() {
   return (
     <article>
-      <p className="fd-eyebrow">07 · Principles</p>
-      <h2 className="fd-title">Principles</h2>
-      <p className="fd-lede">
-        Ten invariants inherited from the Kami visual language, and the four places MSW deliberately
-        extends it for interactive UI.
-      </p>
+      <PageHeader
+        eyebrow="07 · Principles"
+        title="Principles"
+        lede="Ten invariants inherited from the Kami visual language, and the four places MSW deliberately extends it for interactive UI."
+      />
 
-      <div className="pr-label">The ten invariants</div>
+      <h2 className="pr-label">The ten invariants</h2>
       <ol className="pr-list">
         {INVARIANTS.map(([title, body], i) => (
           <li className="pr-item" key={title}>
-            <span className="pr-num">{String(i + 1).padStart(2, "0")}</span>
+            <span className="pr-num" aria-hidden="true">
+              {String(i + 1).padStart(2, "0")}
+            </span>
             <div>
               <div className="pr-item-title">{title}</div>
               <p className="pr-item-body">{body}</p>
@@ -58,7 +60,7 @@ export function Principles() {
         ))}
       </ol>
 
-      <div className="pr-label">Deliberate deviations</div>
+      <h2 className="pr-label">Deliberate deviations</h2>
       <dl className="pr-devs">
         {DEVIATIONS.map(([title, body]) => (
           <div className="pr-dev" key={title}>

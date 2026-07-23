@@ -1,24 +1,5 @@
-/* Shared styles for the /foundations pages — page header pattern + swatch grid.
-   Every value comes from @msw-ds/theme tokens; no hardcoded colors. */
-
-.eyebrow {
-  font-size: 13px;
-  color: var(--color-accent);
-  letter-spacing: 0.4px;
-  margin: 0 0 12px;
-}
-
-.page-title {
-  margin: 0 0 12px;
-}
-
-.lede {
-  font-size: 15px;
-  line-height: 1.55;
-  color: var(--color-text-secondary);
-  max-width: 60ch;
-  margin: 0 0 40px;
-}
+/* Shared styles for the /foundations pages — swatch grid and type samples.
+   Page titles use PageHeader; values come from theme tokens. */
 
 .section {
   margin: 0 0 40px;
@@ -47,7 +28,7 @@
   gap: 12px;
 }
 
-/* Typography page — live type ramp rows */
+/* Typography page — live type ramp rows (visual samples, not document headings) */
 .type-row {
   display: flex;
   align-items: baseline;
@@ -61,6 +42,51 @@
 .type-sample {
   margin: 0;
   flex: 1;
+  font-family: var(--font-family-heading);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+}
+.type-sample-h1 {
+  font-size: var(--font-size-2xl);
+  line-height: 1.3333;
+}
+.type-sample-h2 {
+  font-size: var(--font-size-xl);
+  line-height: 1.4;
+}
+.type-sample-h3 {
+  font-size: var(--font-size-lg);
+  line-height: 1.4118;
+}
+.type-sample-h4 {
+  font-size: var(--font-size-base);
+  line-height: 1.4286;
+}
+.type-sample-h5 {
+  font-size: var(--font-size-sm);
+  line-height: 1.6667;
+}
+.type-sample-h6 {
+  font-size: var(--font-size-xs);
+  line-height: 1.6;
+}
+.type-sample-body {
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-normal);
+  font-size: var(--font-size-base);
+  line-height: 1.55;
+}
+.type-sample-small {
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-normal);
+  font-size: var(--font-size-sm);
+  line-height: 1.6667;
+  color: var(--color-text-secondary);
+}
+.type-sample-code {
+  font-family: var(--font-family-code);
+  font-weight: var(--font-weight-normal);
+  font-size: var(--font-size-base);
 }
 .type-label {
   font-family: var(--font-family-code);
@@ -97,7 +123,7 @@
   color: var(--color-text-secondary);
 }
 
-/* Key/value rows — reused by Motion for duration & easing tokens */
+/* Key/value rows — Motion duration & easing */
 .kv-rows {
   display: flex;
   flex-direction: column;
@@ -124,7 +150,7 @@
   color: var(--color-text-secondary);
 }
 
-/* Motion page — live hover demo */
+/* Motion page — live demo */
 .motion-demo-wrap {
   display: flex;
   flex-direction: column;
@@ -140,8 +166,28 @@
   transition:
     transform var(--duration-medium) var(--ease-standard),
     background-color var(--duration-medium) var(--ease-standard);
+  cursor: pointer;
+  font: inherit;
+  padding: 0;
 }
-.motion-demo:hover {
+.motion-demo:hover,
+.motion-demo:focus-visible {
   transform: translateY(-4px);
   background-color: var(--color-accent);
+  outline: none;
+}
+.motion-demo:focus-visible {
+  box-shadow:
+    0 0 0 2px var(--color-background-body),
+    0 0 0 4px var(--color-accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-demo {
+    transition: background-color var(--duration-fast) var(--ease-standard);
+  }
+  .motion-demo:hover,
+  .motion-demo:focus-visible {
+    transform: none;
+  }
 }

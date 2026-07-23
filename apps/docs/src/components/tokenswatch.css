@@ -1,6 +1,5 @@
-/* Generic token display card — ivory surface, quiet border, radius-container.
-   The preview box's color/radius/shadow is set inline per token (see TokenSwatch.tsx);
-   everything else here comes from theme tokens only. */
+/* Token display cards. Contrast stages make near-canvas fills and whisper
+   shadows teachable instead of invisible. */
 
 .token-swatch {
   display: flex;
@@ -17,18 +16,81 @@
   box-shadow: var(--shadow-low);
 }
 
+.token-stage {
+  border-radius: var(--radius-element);
+  overflow: hidden;
+}
+
+/* Checker-tint stage so parchment/ivory/muted read against a known ground */
+.token-stage-contrast {
+  padding: 12px;
+  background:
+    linear-gradient(45deg, var(--color-background-muted) 25%, transparent 25%),
+    linear-gradient(-45deg, var(--color-background-muted) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, var(--color-background-muted) 75%),
+    linear-gradient(-45deg, transparent 75%, var(--color-background-muted) 75%);
+  background-size: 12px 12px;
+  background-position:
+    0 0,
+    0 6px,
+    6px -6px,
+    -6px 0;
+  background-color: var(--color-background-body);
+}
+
+.token-stage-shadow {
+  /* Mid ground so whisper shadows (5% black) still read as lift */
+  padding: 22px 18px;
+  background: color-mix(in srgb, var(--color-background-muted) 70%, var(--color-text-primary) 8%);
+}
+
 .token-preview {
   height: 48px;
   box-sizing: border-box;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-element);
   background: var(--color-background-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.token-stage-contrast .token-preview {
+  /* Sample sits on stage; border helps define canvas edges */
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--color-text-primary) 8%, transparent);
+}
+
+.token-preview-shadow {
+  height: 48px;
+  width: 100%;
+  border-color: transparent;
+  background: var(--color-background-card);
+}
+
+.token-preview-border {
+  border: none;
+}
+
+.token-preview-border-label {
+  font-size: 11px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  opacity: 0.7;
+}
+
+.token-preview-text {
+  font-family: var(--font-family-heading);
+  font-size: 22px;
+  font-weight: var(--font-weight-medium);
+  line-height: 1;
 }
 
 .token-name {
   font-family: var(--font-family-code);
   font-size: 12px;
   color: var(--color-text-primary);
+  word-break: break-all;
 }
 
 .token-note {
@@ -36,4 +98,10 @@
   line-height: 1.5;
   color: var(--color-text-secondary);
   margin: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .token-swatch {
+    transition: none;
+  }
 }
