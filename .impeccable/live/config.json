@@ -1,0 +1,6 @@
+{
+  "files": ["apps/docs/index.html"],
+  "insertBefore": "<div id=\"root\"></div>",
+  "commentSyntax": "html",
+  "cspChecked": true
+}
