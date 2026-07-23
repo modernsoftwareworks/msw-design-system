@@ -8,7 +8,10 @@
       "types": "./dist/msw.d.ts",
       "default": "./dist/msw.js"
     },
-    "./css": "./dist/msw.css"
+    "./css": {
+      "types": "./css.d.ts",
+      "default": "./dist/msw.css"
+    }
   },
   "scripts": {
     "build": "astryx theme build src/themes/msw.ts -o dist/msw.css",
