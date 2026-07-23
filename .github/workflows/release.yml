@@ -20,8 +20,8 @@ jobs:
         with:
           node-version: 22
           cache: pnpm
-          registry-url: 'https://npm.pkg.github.com'
-          scope: '@modernsoftwareworks'
+          registry-url: "https://npm.pkg.github.com"
+          scope: "@modernsoftwareworks"
       - run: pnpm install --frozen-lockfile
       - name: Create release PR or publish to GitHub Packages
         uses: changesets/action@v1

@@ -1,41 +1,41 @@
 {
-  "name": "@modernsoftwareworks/msw-ui",
-  "version": "0.1.0",
-  "description": "MSW design system — the full Astryx component catalog behind MswProvider, themed in the Kami visual language (TypeScript source, like Astryx itself)",
-  "license": "MIT",
-  "type": "module",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/modernsoftwareworks/msw-design-system.git",
-    "directory": "packages/ui"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com",
-    "access": "public"
-  },
-  "files": [
-    "src",
-    "!src/**/*.test.*"
-  ],
-  "exports": {
-    ".": "./src/index.ts"
-  },
-  "scripts": {
-    "typecheck": "tsc --noEmit"
-  },
-  "dependencies": {
-    "@astryxdesign/core": "0.1.7",
-    "@modernsoftwareworks/msw-theme": "workspace:*",
-    "@stylexjs/stylex": "0.19.0"
-  },
-  "peerDependencies": {
-    "react": ">=19.0.0",
-    "react-dom": ">=19.0.0"
-  },
-  "devDependencies": {
-    "@types/react": "^19.2.0",
-    "@types/react-dom": "^19.2.0",
-    "react": "^19.2.8",
-    "react-dom": "^19.2.8"
-  }
+	"name": "@modernsoftwareworks/msw-ui",
+	"version": "0.1.0",
+	"description": "MSW design system — the full Astryx component catalog behind MswProvider, themed in the Kami visual language (TypeScript source, like Astryx itself)",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/modernsoftwareworks/msw-design-system.git",
+		"directory": "packages/ui"
+	},
+	"files": [
+		"src",
+		"!src/**/*.test.*"
+	],
+	"type": "module",
+	"exports": {
+		".": "./src/index.ts"
+	},
+	"publishConfig": {
+		"access": "public",
+		"registry": "https://npm.pkg.github.com"
+	},
+	"scripts": {
+		"typecheck": "tsc --noEmit"
+	},
+	"dependencies": {
+		"@astryxdesign/core": "0.1.7",
+		"@modernsoftwareworks/msw-theme": "workspace:*",
+		"@stylexjs/stylex": "0.19.0"
+	},
+	"devDependencies": {
+		"@types/react": "^19.2.0",
+		"@types/react-dom": "^19.2.0",
+		"react": "^19.2.8",
+		"react-dom": "^19.2.8"
+	},
+	"peerDependencies": {
+		"react": ">=19.0.0",
+		"react-dom": ">=19.0.0"
+	}
 }
